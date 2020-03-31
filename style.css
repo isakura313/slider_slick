@@ -1,0 +1,14 @@
+.img-gallery img{
+    height: 400px;
+    width: auto !important;
+}
+.main-slider{
+    display: flex;
+    justify-content: center;
+    /* width: 100vh; */
+}
+.img-gallery{
+    display: flex;
+    justify-content: center;
+    width: 50vh;
+}
