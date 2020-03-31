@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
     $('.img-gallery').slick({
         dots: true,
         infinite: true,
@@ -6,4 +6,22 @@ $(document).ready(function() {
         slidesToShow: 1,
         slidesToScroll: 1
     })
-});
+
+    $('.arts_popup').magnificPopup({delegate:'a',
+    type:'image',
+    gallery:{
+        enabled:true,
+        navigateByImgClick: true    
+    },
+    removalDelay: 300,
+
+    mainClass:'mfp-fade'
+
+})
+
+
+
+
+
+
+
