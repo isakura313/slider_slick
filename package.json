@@ -13,5 +13,9 @@
     "jquery": "^3.4.1",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1"
   }
 }
