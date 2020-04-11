@@ -14,6 +14,10 @@ const jsFiles = [
     './node_modules/magnific-popup/dist/jquery.magnific-popup.js',
     './code.js'
 ]
+const Files = [
+    './index.html',
+]
+
 
 function styles() {
     return gulp.src(cssFiles)
@@ -26,6 +30,12 @@ function scripts(){
     .pipe(concat('jsCode.js'))
     .pipe(gulp.dest('./build/js'))
 }
+function File(){
+    return gulp.src(Files)
+    .pipe(concat('index.html'))
+    .pipe(gulp.dest('./build'))
+}
 
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
+gulp.task('Files', File);
