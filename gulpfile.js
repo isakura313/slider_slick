@@ -28,24 +28,37 @@ function getJs(){
     return src(['node_modules/jquery/dist/jquery.js', 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         'node_modules/slick-carousel/slick/slick.js', 'code.js' ])
         .pipe(concat('code.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rename({suffix: ".min"}))
         .pipe(dest('build/'));
 }
 
-// function getFonts() {
-//     return src('node_modules/slick-carousel/slick/fonts/*.*')
-//         .pipe(dest('build/fonts'));
-// }
+function getFonts() {
+    return src('node_modules/slick-carousel/slick/fonts/*.*')
+        .pipe(dest('build/fonts'));
+}
 
 
-exports.build = series(copyHtml, copyCss, getJs, copyImages);
+//How copy one gif without function?
+function getGif() {
+    return src('node_modules/slick-carousel/slick/*.gif')
+        .pipe(dest('build/'));
+}
+
+function getSlickAddFiles(){
+    getFonts();
+    getGif();
+}
+
+exports.build = series(copyHtml, copyCss, getJs, getFonts, getGif, copyImages);
 
 function getReady(){
     copyHtml();
     copyCss();
     getJs();
+    getSlickAddFiles();
     // getFonts();
+    // getGif();
     copyImages();
 }
 
