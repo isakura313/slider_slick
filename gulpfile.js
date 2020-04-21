@@ -66,4 +66,5 @@ exports.default = function() {
     getReady();
     watch('*.html', copyHtml);
     watch('*.js', getJs);
+    watch('style.css', copyCss);
 };
